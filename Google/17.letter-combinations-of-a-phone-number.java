@@ -5,6 +5,9 @@
  */
 
 // @lc code=start
+// Difficulty : Medium
+// Related Topics : Backtracking, String, Hash Table
+// Problem Link : https://leetcode.com/problems/letter-combinations-of-a-phone-number/
 
 import java.util.ArrayList;
 import java.util.HashMap;

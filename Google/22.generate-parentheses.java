@@ -5,6 +5,9 @@
  */
 
 // @lc code=start
+// Difficulty : Medium
+// Related Topics : Backtracking
+// Problem Link : https://leetcode.com/problems/generate-parentheses/
 
 import java.util.List;
 
