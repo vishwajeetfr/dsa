@@ -18,6 +18,8 @@ class Node {
 }
 */
 
+// Solution 1 using BFS (less optmized)
+
 class Solution {
     public Node cloneGraph(Node node) {
         if(node==null) return null;
@@ -51,5 +53,25 @@ class Solution {
             cur.neighbors = nbrs;
         }
         return  nodeMap.get(k);
+    }
+}
+
+// Solution 2 using DFS (more optimal)
+
+
+class Solution {
+    public Node cloneGraph(Node node) {
+        if(node==null) return null;
+        return getClonedGraph(node, new HashMap<Node,Node>());
+    }
+    Node getClonedGraph(Node node, HashMap<Node,Node> nodeMap){
+        if(nodeMap.containsKey(node)) return nodeMap.get(node);
+        Node clonedNode = new Node(node.val);
+        nodeMap.put(node, clonedNode);
+        List<Node> nodeList = new ArrayList<>();
+        for(Node nbr : node.neighbors){
+            clonedNode.neighbors.add(getClonedGraph(nbr, nodeMap));
+        }
+        return clonedNode;
     }
 }
